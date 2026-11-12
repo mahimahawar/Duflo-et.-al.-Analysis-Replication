@@ -45,7 +45,7 @@ The study follows people who took part in a scholarship lottery for secondary sc
 
 For each column, I run an OLS regression of child survival on the scholarship-treatment indicator. The controls are birth-order dummies, birth year (linear or as dummies, depending on the column), region dummies, a parent exam-score control, and flags for filled-in missing values. Standard errors are clustered by parent ID, because one parent can have several children. Samples use the authors' own sample indicators (`samplemort_one` and `samplemort_three`). Significance stars follow the paper's convention (* p<0.1, ** p<0.05, *** p<0.01).
 
-The specification was pieced together from the paper's description and the variable names in the data. I did not have the authors' Stata do-file for this table, so some details may differ from theirs.
+The specification was pieced together from the paper's description and the variable names in the data.
 
 # Results: Paper vs. My R Output
 
