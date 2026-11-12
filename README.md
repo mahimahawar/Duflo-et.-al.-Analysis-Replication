@@ -3,6 +3,7 @@
 An independent replication, in R, of Table 2 from:
 
 > Duflo, Esther, Pascaline Dupas, Elizabeth Spelke, and Mark Walsh. 2026. "Intergenerational Impacts of Secondary Education: Experimental Evidence from Ghana." American Economic Review 116 (9): 3586–3621. [https://www.aeaweb.org/articles?id=10.1257/aer.20241001]
+> Data compared against the 2024 NBER Working Paper [https://www.nber.org/papers/w32742] as the AER article cannot be accessed.
 
 The authors' own code is written in Stata. I have translated their Table 2 regressions into R, owing to lack of access to Stata. This is an attempt to replicate their analysis. The research and data belongs to them.
 
