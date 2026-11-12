@@ -1,0 +1,1 @@
+Authors' replication package on openICPSR contains the file "mortality_surveys_u5.dta". It needs to be downloaded and saved in this folder for the code to run successfully during check.
