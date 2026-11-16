@@ -1,13 +1,13 @@
 # Replication of Table 2 (Child Survival) in R
 
-An independent replication, in R, of Table 2 from:
+An independent replication of Table 2 from:
 
 > Duflo, Esther, Pascaline Dupas, Elizabeth Spelke, and Mark Walsh. 2026. "Intergenerational Impacts of Secondary Education: Experimental Evidence from Ghana." American Economic Review 116 (9): 3586–3621. [https://www.aeaweb.org/articles?id=10.1257/aer.20241001]
 > Data compared against the 2024 NBER Working Paper [https://www.nber.org/papers/w32742] as the AER article cannot be accessed.
 
 The authors' own code is written in Stata. I have translated their Table 2 regressions into R, owing to lack of access to Stata. This is an attempt to replicate their analysis. The research and data belongs to them.
 
-# What Table 2 shows
+# Table 2 Captures:
 
 The study follows people who took part in a scholarship lottery for secondary school in Ghana. Table 2 asks whether winning a scholarship changed the survival of the participants' children, reported separately for female and male participants:
 
@@ -17,7 +17,7 @@ The study follows people who took part in a scholarship lottery for secondary sc
 - **Columns 1 and 2** control for birth year as a linear trend. **Columns 3 and 4** use a separate dummy for each birth year.
 - The last row tests whether the effect for male participants equals the effect for female participants.
 
-# Repository contents
+# Repository
 
 ```
 .
@@ -27,13 +27,13 @@ The study follows people who took part in a scholarship lottery for secondary sc
 ├── data/
 │   └── README.md                        # where to download the data (not included here)
 └── output/
-    ├── table2_replication.md            # my replicated table, produced by the script
-    └── table2_replication_comparison.xlsx   # cell-by-cell comparison with the paper
+    ├── table2_replication.md            # replicated table
+    └── table2_replication_comparison.xlsx   # comparison with the paper
 ```
 
 # How to run
 
-1. **Get the data.** Download the authors' replication package from openICPSR [https://doi.org/10.3886/E241205V1] and save `mortality_surveys_u5.dta` (found in the package's `Data/Constructed/` folder) into this repository's `data/` folder.
+1. **Get the data.** Download the replication package from openICPSR [https://doi.org/10.3886/E241205V1] and save `mortality_surveys_u5.dta` into this repository's `data/` folder.
 2. **Install R and RStudio.** The script needs R version 4.1 or newer.
 3. **Install the packages once**:
    ```r
@@ -44,7 +44,7 @@ The study follows people who took part in a scholarship lottery for secondary sc
 
 # Method
 
-For each column, I run an OLS regression of child survival on the scholarship-treatment indicator. The controls are birth-order dummies, birth year (linear or as dummies, depending on the column), region dummies, a parent exam-score control, and flags for filled-in missing values. Standard errors are clustered by parent ID, because one parent can have several children. Samples use the authors' own sample indicators (`samplemort_one` and `samplemort_three`). Significance stars follow the paper's convention (* p<0.1, ** p<0.05, *** p<0.01).
+For each column, I run an OLS regression of child survival on the scholarship-treatment indicator. The controls are birth-order dummies, birth year (linear or as dummies), region dummies, a parent exam-score control, and flags for filled-in missing values. Standard errors are clustered by parent ID, because one parent can have several children. Samples use the authors' own sample indicators (`samplemort_one` and `samplemort_three`). Significance stars follow the paper's convention (* p<0.1, ** p<0.05, *** p<0.01).
 
 The specification was pieced together from the paper's description and the variable names in the data.
 
@@ -81,13 +81,13 @@ The specification was pieced together from the paper's description and the varia
 
 # Differences from the paper
 
-Counting each statistic in each column (44 cells in total), **23 match the paper exactly at the three decimals printed, and 21 do not**. The standard errors match in all 8 cells, the coefficients in 6 of 8, the p-values in 1 of 8, and none of the four male-vs-female p-values match. Many of the gaps are small (often 0.001 to 0.005). The full cell-by-cell comparison is in `output/table2_replication_comparison.xlsx`.
+Counting each statistic in each column (44 in total), **23 match the paper exactly, and 21 do not**. The standard errors match in all 8 cells, the coefficients in 6 of 8, the p-values in 1 of 8, and none of the four male-vs-female p-values match. Many of the gaps are small (often 0.001 to 0.005). The full cell-by-cell comparison is in `output/table2_replication_comparison.xlsx`.
 
 The differences cluster in three places:
 
-1. **Panel A, columns 2 and 4 (survived to three years).** My coefficient is about 0.020 against the paper's 0.018, and my p-value is about 0.04 against 0.065. This changes the significance marker from * to **.
-2. **Male sample sizes.** The data file provided for replication includes 1,009 and 765 male-parent children under the authors' sample indicators, while the paper reports 1,016 and 772.
-3. **The male-vs-female test.** I do not know the paper's exact method, so my version is an approximation: one regression on both groups with separate treatment effects for each, then a test that the two are equal.
+1. **Panel A, columns 2 and 4 (survived to three years).** Replicated coefficient is about 0.020 against the paper's 0.018, and replicated p-value is about 0.04 against 0.065. This changes the significance from * to **.
+2. **Male sample sizes.** The data file provided for replication includes 1,009 and 765 male-parent children under the authors' sample indicators, while the working paper from 2024 reports 1,016 and 772.
+3. **The male-vs-female test.** The replicated version is an approximation: one regression on both groups with separate treatment effects for each, then a test that the two are equal.
 
 Two hypotheses: The paper I compared against is the July 2024 working paper, while the replication package I downloaded may reflect a later data version or the authors' exact specification differs from the one I inferred.
 
