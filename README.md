@@ -3,13 +3,13 @@
 An independent replication of Table 2 from:
 
 > Duflo, Esther, Pascaline Dupas, Elizabeth Spelke, and Mark Walsh. 2026. "Intergenerational Impacts of Secondary Education: Experimental Evidence from Ghana." American Economic Review 116 (9): 3586–3621. [https://www.aeaweb.org/articles?id=10.1257/aer.20241001]
-> Data compared against the 2024 NBER Working Paper [https://www.nber.org/papers/w32742] as the AER article cannot be accessed.
+> Data acquired from the AER replication package for the 2026 publication. Results compared against the 2024 NBER Working Paper [https://www.nber.org/papers/w32742] as the AER article cannot be accessed.
 
-The authors' own code is written in Stata. I have translated their Table 2 regressions into R, owing to lack of access to Stata. This is an attempt to replicate their analysis. The research and data belongs to them.
+The authors' own code is written in Stata. I have reproduced their Table 2 regressions in R, owing to lack of access to Stata. This is an attempt to replicate their analysis. The research and data belongs to them.
 
 # Research Aim
 
-The study provides experimental evidence on the intergenerational impacts of secondary education subsidies in a low-income context. The paper argues that the extent to which secondary education should be publicly subsidized is not settled in academic literature. Hence, the authors closely examine a source of externality, namely the fact that more educated individuals (especially women) may choose and be able to have fewer children, delay childbearing, and invest more in the human capital of the children they do have. In this vein, they study the potential benefit to future generations by providing free education to one cohort of adolescents.
+Duflo et al. (2024) provides experimental evidence on the intergenerational impacts of secondary education subsidies in a low-income context. The paper argues that the extent to which secondary education should be publicly subsidized is not settled in academic literature. Hence, the authors closely examine a source of externality, namely the fact that more educated individuals (especially women) may choose and be able to have fewer children, delay childbearing, and invest more in the human capital of the children they do have. In this vein, they study the potential benefit to future generations by providing free education to one cohort of adolescents.
 
 # Design
 
@@ -18,8 +18,8 @@ In 2008, Duflo et al. (2024) sampled 2,064 students who had not enrolled in seni
 One-third of these scholarship recipients were randomly assigned to the treatment group and the remaining two-thirds to the comparison group in a lottery. Four rounds of surveys were conducted:
 
 - **2008:** Baseline survey to the students and one guardian each to collect identifiable information and demographic characteristics
-- **2009-12:** Once-a-year update taken to update contact information and collect data on basic outcomes such as education status post senior high school, fertility, and cohabitation
-- **2013:** Detailed in-person follow-up survey measuring schooling, occupation, cognitive sills, labour market expectations, health and fertility, etc.
+- **2009-12:** Once-a-year-update taken on contact information and basic outcomes such as education status post senior high school, fertility, and cohabitation
+- **2013:** Detailed in-person follow-up survey measuring schooling, occupation, cognitive skills, labour market expectations, health and fertility, etc.
 - **2015, 2016, 2017, 2019, 2020, 2022, 2023:** Phone follow-up surveys to update contact information and collected data on outcomes such as tertiary education, fertility, child survival, cohabitation, and labor market activities
 
 # Table 2 Captures
